@@ -1,0 +1,58 @@
+name: Scrape Forebet Scores
+
+on:
+  schedule:
+    # Every day at 10:00 UTC (11:00 CET)
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      sport_filter:
+        description: 'Sport to scrape (empty = all)'
+        required: false
+        default: ''
+      start_date:
+        description: 'Start date YYYY-MM-DD'
+        required: false
+        default: ''
+      end_date:
+        description: 'End date YYYY-MM-DD'
+        required: false
+        default: ''
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 -q
+      
+      - name: Copy existing CSV
+        run: |
+          mkdir -p gh-scraper/output
+          if [ -f data/multi_sport_2026-03.csv ]; then
+            cp data/multi_sport_2026-03.csv gh-scraper/multi_sport_2026-03.csv
+            echo "✅ CSV copied"
+          else
+            echo "⚠️ No existing CSV found"
+          fi
+      
+      - name: Run scraper
+        env:
+          START_DATE: ${{ github.event.inputs.start_date || '2026-03-01' }}
+          END_DATE: ${{ github.event.inputs.end_date || '2026-03-26' }}
+          SPORT_FILTER: ${{ github.event.inputs.sport_filter || '' }}
+        run: python gh-scraper/scrape_scores.py
+      
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraped-scores-${{ github.run_number }}
+          path: gh-scraper/output/
+          retention-days: 30
