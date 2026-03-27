@@ -33,17 +33,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 -q
       
-      - name: Copy existing CSV
-        run: |
-          mkdir -p gh-scraper/output
-          if [ -f data/multi_sport_2026-03.csv ]; then
-            cp data/multi_sport_2026-03.csv gh-scraper/multi_sport_2026-03.csv
-            echo "✅ CSV copied"
-          else
-            echo "⚠️ No existing CSV found"
-          fi
+      - name: Run scraper
+        working-directory: gh-scraper
       
       - name: Run scraper
+        working-directory: gh-scraper
         env:
           START_DATE: ${{ github.event.inputs.start_date || '2026-03-01' }}
           END_DATE: ${{ github.event.inputs.end_date || '2026-03-26' }}
