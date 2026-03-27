@@ -2,7 +2,6 @@ name: Scrape Forebet Scores
 
 on:
   schedule:
-    # Every day at 10:00 UTC (11:00 CET)
     - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
@@ -22,6 +21,9 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gh-scraper
     steps:
       - uses: actions/checkout@v4
       
@@ -34,15 +36,11 @@ jobs:
         run: pip install requests beautifulsoup4 -q
       
       - name: Run scraper
-        working-directory: gh-scraper
-      
-      - name: Run scraper
-        working-directory: gh-scraper
         env:
           START_DATE: ${{ github.event.inputs.start_date || '2026-03-01' }}
           END_DATE: ${{ github.event.inputs.end_date || '2026-03-26' }}
           SPORT_FILTER: ${{ github.event.inputs.sport_filter || '' }}
-        run: python gh-scraper/scrape_scores.py
+        run: python scrape_scores.py
       
       - name: Upload results
         uses: actions/upload-artifact@v4
