@@ -1,0 +1,220 @@
+Multi-sport: 7 sports × 26 days = 182 requests
+
+📅 2026-03-01
+  [1/182] Tennis          -> 73 matchs
+  [2/182] Basketball      -> 248 matchs
+  [3/182] Hockey          -> 262 matchs
+  [4/182] Volleyball      -> 167 matchs
+  [5/182] Handball        -> 88 matchs
+  [6/182] Cricket         -> 23 matchs
+  [7/182] Baseball        -> 17 matchs
+📅 2026-03-02
+  [8/182] Tennis          -> 81 matchs
+  [9/182] Basketball      -> 60 matchs
+  [10/182] Hockey          -> 66 matchs
+  [11/182] Volleyball      -> 20 matchs
+  [12/182] Handball        -> 8 matchs
+  [13/182] Cricket         -> 8 matchs
+  [14/182] Baseball        -> 18 matchs
+📅 2026-03-03
+  [15/182] Tennis          -> 78 matchs
+  [16/182] Basketball      -> 73 matchs
+  [17/182] Hockey          -> 66 matchs
+  [18/182] Volleyball      -> 35 matchs
+  [19/182] Handball        -> 21 matchs
+  [20/182] Cricket         -> 8 matchs
+  [21/182] Baseball        -> 23 matchs
+📅 2026-03-04
+  [22/182] Tennis          -> 66 matchs
+  [23/182] Basketball      -> 170 matchs
+  [24/182] Hockey          -> 125 matchs
+  [25/182] Volleyball      -> 81 matchs
+  [26/182] Handball        -> 52 matchs
+  [27/182] Cricket         -> 11 matchs
+  [28/182] Baseball        -> 23 matchs
+📅 2026-03-05
+  [29/182] Tennis          -> 48 matchs
+  [30/182] Basketball      -> 169 matchs
+  [31/182] Hockey          -> 107 matchs
+  [32/182] Volleyball      -> 53 matchs
+  [33/182] Handball        -> 26 matchs
+  [34/182] Cricket         -> 10 matchs
+  [35/182] Baseball        -> 18 matchs
+📅 2026-03-06
+  [36/182] Tennis          -> 52 matchs
+  [37/182] Basketball      -> 240 matchs
+  [38/182] Hockey          -> 142 matchs
+  [39/182] Volleyball      -> 69 matchs
+  [40/182] Handball        -> 32 matchs
+  [41/182] Cricket         -> 13 matchs
+  [42/182] Baseball        -> 20 matchs
+📅 2026-03-07
+  [43/182] Tennis          -> 36 matchs
+  [44/182] Basketball      -> 437 matchs
+  [45/182] Hockey          -> 236 matchs
+  [46/182] Volleyball      -> 262 matchs
+  [47/182] Handball        -> 161 matchs
+  [48/182] Cricket         -> 20 matchs
+  [49/182] Baseball        -> 28 matchs
+📅 2026-03-08
+  [50/182] Tennis          -> 90 matchs
+  [51/182] Basketball      -> 293 matchs
+  [52/182] Hockey          -> 202 matchs
+  [53/182] Volleyball      -> 156 matchs
+  [54/182] Handball        -> 85 matchs
+  [55/182] Cricket         -> 33 matchs
+  [56/182] Baseball        -> 29 matchs
+📅 2026-03-09
+  [57/182] Tennis          -> 85 matchs
+  [58/182] Basketball      -> 83 matchs
+  [59/182] Hockey          -> 56 matchs
+  [60/182] Volleyball      -> 23 matchs
+  [61/182] Handball        -> 18 matchs
+  [62/182] Cricket         -> 13 matchs
+  [63/182] Baseball        -> 23 matchs
+📅 2026-03-10
+  [64/182] Tennis          -> 101 matchs
+  [65/182] Basketball      -> 96 matchs
+  [66/182] Hockey          -> 76 matchs
+  [67/182] Volleyball      -> 31 matchs
+  [68/182] Handball        -> 23 matchs
+  [69/182] Cricket         -> 11 matchs
+  [70/182] Baseball        -> 20 matchs
+📅 2026-03-11
+  [71/182] Tennis          -> 57 matchs
+  [72/182] Basketball      -> 197 matchs
+  [73/182] Hockey          -> 90 matchs
+  [74/182] Volleyball      -> 38 matchs
+  [75/182] Handball        -> 55 matchs
+  [76/182] Cricket         -> 20 matchs
+  [77/182] Baseball        -> 18 matchs
+📅 2026-03-12
+  [78/182] Tennis          -> 53 matchs
+  [79/182] Basketball      -> 137 matchs
+  [80/182] Hockey          -> 109 matchs
+  [81/182] Volleyball      -> 41 matchs
+  [82/182] Handball        -> 29 matchs
+  [83/182] Cricket         -> 12 matchs
+  [84/182] Baseball        -> 13 matchs
+📅 2026-03-13
+  [85/182] Tennis          -> 40 matchs
+  [86/182] Basketball      -> 148 matchs
+  [87/182] Hockey          -> 110 matchs
+  [88/182] Volleyball      -> 70 matchs
+  [89/182] Handball        -> 60 matchs
+  [90/182] Cricket         -> 20 matchs
+  [91/182] Baseball        -> 20 matchs
+📅 2026-03-14
+  [92/182] Tennis          -> 22 matchs
+  [93/182] Basketball      -> 354 matchs
+  [94/182] Hockey          -> 222 matchs
+  [95/182] Volleyball      -> 268 matchs
+  [96/182] Handball        -> 214 matchs
+  [97/182] Cricket         -> 19 matchs
+  [98/182] Baseball        -> 21 matchs
+📅 2026-03-15
+  [99/182] Tennis          -> 55 matchs
+  [100/182] Basketball      -> 248 matchs
+  [101/182] Hockey          -> 199 matchs
+  [102/182] Volleyball      -> 142 matchs
+  [103/182] Handball        -> 98 matchs
+  [104/182] Cricket         -> 26 matchs
+  [105/182] Baseball        -> 23 matchs
+📅 2026-03-16
+  [106/182] Tennis          -> 71 matchs
+  [107/182] Basketball      -> 42 matchs
+  [108/182] Hockey          -> 70 matchs
+  [109/182] Volleyball      -> 36 matchs
+  [110/182] Handball        -> 5 matchs
+  [111/182] Cricket         -> 7 matchs
+  [112/182] Baseball        -> 13 matchs
+📅 2026-03-17
+  [113/182] Tennis          -> 90 matchs
+  [114/182] Basketball      -> 93 matchs
+  [115/182] Hockey          -> 87 matchs
+  [116/182] Volleyball      -> 36 matchs
+  [117/182] Handball        -> 7 matchs
+  [118/182] Cricket         -> 15 matchs
+  [119/182] Baseball        -> 21 matchs
+📅 2026-03-18
+  [120/182] Tennis          -> 33 matchs
+  [121/182] Basketball      -> 122 matchs
+  [122/182] Hockey          -> 105 matchs
+  [123/182] Volleyball      -> 78 matchs
+  [124/182] Handball        -> 37 matchs
+  [125/182] Cricket         -> 10 matchs
+  [126/182] Baseball        -> 22 matchs
+📅 2026-03-19
+  [127/182] Tennis          -> 69 matchs
+  [128/182] Basketball      -> 103 matchs
+  [129/182] Hockey          -> 80 matchs
+  [130/182] Volleyball      -> 39 matchs
+  [131/182] Handball        -> 13 matchs
+  [132/182] Cricket         -> 10 matchs
+  [133/182] Baseball        -> 13 matchs
+📅 2026-03-20
+  [134/182] Tennis          -> 51 matchs
+  [135/182] Basketball      -> 151 matchs
+  [136/182] Hockey          -> 83 matchs
+  [137/182] Volleyball      -> 58 matchs
+  [138/182] Handball        -> 8 matchs
+  [139/182] Cricket         -> 17 matchs
+  [140/182] Baseball        -> 31 matchs
+📅 2026-03-21
+  [141/182] Tennis          -> 53 matchs
+  [142/182] Basketball      -> 346 matchs
+  [143/182] Hockey          -> 183 matchs
+  [144/182] Volleyball      -> 191 matchs
+  [145/182] Handball        -> 120 matchs
+  [146/182] Cricket         -> 18 matchs
+  [147/182] Baseball        -> 36 matchs
+📅 2026-03-22
+  [148/182] Tennis          -> 98 matchs
+  [149/182] Basketball      -> 272 matchs
+  [150/182] Hockey          -> 180 matchs
+  [151/182] Volleyball      -> 134 matchs
+  [152/182] Handball        -> 44 matchs
+  [153/182] Cricket         -> 18 matchs
+  [154/182] Baseball        -> 28 matchs
+📅 2026-03-23
+  [155/182] Tennis          -> 90 matchs
+  [156/182] Basketball      -> 78 matchs
+  [157/182] Hockey          -> 57 matchs
+  [158/182] Volleyball      -> 22 matchs
+  [159/182] Handball        -> 5 matchs
+  [160/182] Cricket         -> 5 matchs
+  [161/182] Baseball        -> 20 matchs
+📅 2026-03-24
+  [162/182] Tennis          -> 98 matchs
+  [163/182] Basketball      -> 88 matchs
+  [164/182] Hockey          -> 54 matchs
+  [165/182] Volleyball      -> 30 matchs
+  [166/182] Handball        -> 20 matchs
+  [167/182] Cricket         -> 11 matchs
+  [168/182] Baseball        -> 23 matchs
+📅 2026-03-25
+  [169/182] Tennis          -> 38 matchs
+  [170/182] Basketball      -> 165 matchs
+  [171/182] Hockey          -> 72 matchs
+  [172/182] Volleyball      -> 68 matchs
+  [173/182] Handball        -> 76 matchs
+  [174/182] Cricket         -> 15 matchs
+  [175/182] Baseball        -> 7 matchs
+📅 2026-03-26
+  [176/182] Tennis          -> 30 matchs
+  [177/182] Basketball      -> 95 matchs
+  [178/182] Hockey          -> 68 matchs
+  [179/182] Volleyball      -> 42 matchs
+  [180/182] Handball        -> 17 matchs
+  [181/182] Cricket         -> 9 matchs
+  [182/182] Baseball        -> 18 matchs
+
+==================================================
+✅ 13713 total rows saved
+   Tennis          : 1658 rows
+   Basketball      : 4508 rows
+   Hockey          : 3107 rows
+   Volleyball      : 2190 rows
+   Handball        : 1322 rows
+   Cricket         : 382 rows
+   Baseball        : 546 rows

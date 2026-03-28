@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📊 Forebet Mega Dashboard — Mars 2026</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: 'Inter', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; }
+.diff-pos { color: #4ade80; font-weight: 700; }
+.diff-neg { color: #f87171; font-weight: 700; }
+.diff-zero { color: #94a3b8; }
+.cat-tab { cursor: pointer; padding: 6px 14px; border-radius: 8px; font-size: 13px; white-space: nowrap; transition: all 0.2s; }
+.cat-tab:hover { background: #334155; }
+.cat-tab.active { background: #3b82f6; color: white; }
+table { font-size: 13px; }
+th { position: sticky; top: 0; z-index: 10; }
+tr:hover { background: #1e293b !important; }
+.sport-badge { padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+.stat-card { background: #1e293b; border-radius: 12px; padding: 16px; }
+.fade-in { animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
+</head>
+<body class="min-h-screen">
+<div id="app" class="max-w-[1600px] mx-auto p-4">
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <h1 class="text-2xl font-bold">⚽ Forebet Mega Dashboard</h1>
+      <p class="text-slate-400 text-sm">Mars 2026 — 43 238 lignes • Score diffs & écarts</p>
+    </div>
+    <div class="flex gap-3">
+      <select id="sportFilter" onchange="applyFilters()" class="bg-slate-700 text-sm rounded-lg px-3 py-2 border border-slate-600">
+        <option value="all">Tous les sports</option>
+      </select>
+      <select id="dateFilter" onchange="applyFilters()" class="bg-slate-700 text-sm rounded-lg px-3 py-2 border border-slate-600">
+        <option value="all">Toutes les dates</option>
+      </select>
+      <input id="searchBox" oninput="applyFilters()" placeholder="Rechercher équipe..." class="bg-slate-700 text-sm rounded-lg px-3 py-2 border border-slate-600 w-48">
+    </div>
+  </div>
+
+  <!-- Summary Cards -->
+  <div id="summaryCards" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-6"></div>
+
+  <!-- Charts -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+    <div class="stat-card">
+      <h3 class="text-sm font-semibold mb-3 text-slate-300">📈 Écart moyen par sport (score_diff)</h3>
+      <canvas id="chartDiff" height="200"></canvas>
+    </div>
+    <div class="stat-card">
+      <h3 class="text-sm font-semibold mb-3 text-slate-300">📊 Répartition des prédictions par catégorie</h3>
+      <canvas id="chartPreds" height="200"></canvas>
+    </div>
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="flex gap-2 mb-4 overflow-x-auto pb-2" id="catTabs"></div>
+
+  <!-- Table -->
+  <div class="stat-card overflow-hidden">
+    <div class="flex justify-between items-center mb-3">
+      <span id="tableInfo" class="text-sm text-slate-400"></span>
+      <div class="flex gap-2">
+        <button onclick="sortTable('date')" class="text-xs bg-slate-600 px-3 py-1 rounded">📅 Date</button>
+        <button onclick="sortTable('score_diff')" class="text-xs bg-slate-600 px-3 py-1 rounded">📐 Écart</button>
+        <button onclick="exportCSV()" class="text-xs bg-blue-600 px-3 py-1 rounded hover:bg-blue-500">📥 Export CSV</button>
+      </div>
+    </div>
+    <div class="overflow-auto max-h-[600px] rounded-lg border border-slate-700">
+      <table class="w-full">
+        <thead class="bg-slate-800 text-xs text-slate-300">
+          <tr>
+            <th class="px-3 py-2 text-left">📅 Date</th>
+            <th class="px-3 py-2 text-left">🏆 Liga</th>
+            <th class="px-3 py-2 text-left">🏠 Domicile</th>
+            <th class="px-3 py-2 text-left">✈️ Extérieur</th>
+            <th class="px-3 py-2 text-center">🎯 Prono</th>
+            <th class="px-3 py-2 text-center">🔮 Prédit</th>
+            <th class="px-3 py-2 text-center">✅ Score réel</th>
+            <th class="px-3 py-2 text-center">📐 Écart</th>
+            <th class="px-3 py-2 text-center">📊 Probas</th>
+            <th class="px-3 py-2 text-center">💰 Cotes</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+let DATA = [];
+let filteredData = [];
+let currentSort = { col: 'date', asc: false };
+let currentCat = 'all';
+const PAGE = 200;
+let page = 0;
+
+const SPORT_COLORS = {
+  Football: '#22c55e', Tennis: '#f59e0b', Basketball: '#3b82f6',
+  Hockey: '#06b6d4', Volleyball: '#a855f7', Handball: '#ef4444',
+  Cricket: '#eab308', Baseball: '#ec4899', Rugby: '#14b8a6'
+};
+
+const SPORT_BG = {
+  Football: 'bg-green-900/50 text-green-300', Tennis: 'bg-amber-900/50 text-amber-300',
+  Basketball: 'bg-blue-900/50 text-blue-300', Hockey: 'bg-cyan-900/50 text-cyan-300',
+  Volleyball: 'bg-purple-900/50 text-purple-300', Handball: 'bg-red-900/50 text-red-300',
+  Cricket: 'bg-yellow-900/50 text-yellow-300', Baseball: 'bg-pink-900/50 text-pink-300',
+  Rugby: 'bg-teal-900/50 text-teal-300'
+};
+
+async function loadData() {
+  const res = await fetch('data/mega_historical_2026-03.json');
+  DATA = await res.json();
+  
+  // Populate filters
+  const sports = [...new Set(DATA.map(d => d.sport))].sort();
+  const sportSel = document.getElementById('sportFilter');
+  sports.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; sportSel.appendChild(o); });
+  
+  const dates = [...new Set(DATA.map(d => d.date))].sort();
+  const dateSel = document.getElementById('dateFilter');
+  dates.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; dateSel.appendChild(o); });
+  
+  // Category tabs
+  const cats = [...new Set(DATA.map(d => d.category))].sort();
+  const tabBox = document.getElementById('catTabs');
+  const allTab = document.createElement('span');
+  allTab.className = 'cat-tab active'; allTab.textContent = 'Tout'; allTab.dataset.cat = 'all';
+  allTab.onclick = () => { currentCat = 'all'; document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active')); allTab.classList.add('active'); applyFilters(); };
+  tabBox.appendChild(allTab);
+  cats.forEach(c => {
+    const t = document.createElement('span');
+    t.className = 'cat-tab'; t.textContent = c; t.dataset.cat = c;
+    t.onclick = () => { currentCat = c; document.querySelectorAll('.cat-tab').forEach(x => x.classList.remove('active')); t.classList.add('active'); applyFilters(); };
+    tabBox.appendChild(t);
+  });
+  
+  buildCharts();
+  applyFilters();
+}
+
+function applyFilters() {
+  const sport = document.getElementById('sportFilter').value;
+  const date = document.getElementById('dateFilter').value;
+  const search = document.getElementById('searchBox').value.toLowerCase();
+  
+  filteredData = DATA.filter(d => {
+    if (sport !== 'all' && d.sport !== sport) return false;
+    if (date !== 'all' && d.date !== date) return false;
+    if (currentCat !== 'all' && d.category !== currentCat) return false;
+    if (search && !((d.home_team||'').toLowerCase().includes(search) || (d.away_team||'').toLowerCase().includes(search))) return false;
+    return true;
+  });
+  
+  page = 0;
+  renderSummary();
+  renderTable();
+}
+
+function renderSummary() {
+  const box = document.getElementById('summaryCards');
+  const sports = [...new Set(filteredData.map(d => d.sport))];
+  let html = '';
+  
+  // Global stats
+  const scored = filteredData.filter(d => d.home_score != null);
+  const withPred = filteredData.filter(d => d.prediction != null);
+  html += `<div class="stat-card"><div class="text-xs text-slate-400">Total lignes</div><div class="text-2xl font-bold">${filteredData.length.toLocaleString()}</div></div>`;
+  html += `<div class="stat-card"><div class="text-xs text-slate-400">Avec prono</div><div class="text-2xl font-bold text-blue-400">${withPred.length.toLocaleString()}</div></div>`;
+  html += `<div class="stat-card"><div class="text-xs text-slate-400">Avec score</div><div class="text-2xl font-bold text-green-400">${scored.length.toLocaleString()}</div></div>`;
+  
+  if (scored.length > 0) {
+    const avgDiff = (scored.reduce((s,d) => s + (d.score_diff||0), 0) / scored.length).toFixed(2);
+    const pctPos = ((scored.filter(d => d.score_diff > 0).length / scored.length) * 100).toFixed(1);
+    const pctNeg = ((scored.filter(d => d.score_diff < 0).length / scored.length) * 100).toFixed(1);
+    html += `<div class="stat-card"><div class="text-xs text-slate-400">Écart moyen</div><div class="text-2xl font-bold ${parseFloat(avgDiff)>0?'diff-pos':'diff-neg'}">${avgDiff > 0 ? '+' : ''}${avgDiff}</div></div>`;
+    html += `<div class="stat-card"><div class="text-xs text-slate-400">Sous-évalué / Surévalué</div><div class="text-lg font-bold"><span class="diff-pos">${pctPos}%</span> / <span class="diff-neg">${pctNeg}%</span></div></div>`;
+  }
+  
+  box.innerHTML = html;
+}
+
+function renderTable() {
+  const scored = filteredData.filter(d => d.home_score != null);
+  
+  // Sort
+  scored.sort((a, b) => {
+    let va = a[currentSort.col], vb = b[currentSort.col];
+    if (currentSort.col === 'score_diff') { va = parseFloat(va)||0; vb = parseFloat(vb)||0; }
+    if (va < vb) return currentSort.asc ? -1 : 1;
+    if (va > vb) return currentSort.asc ? 1 : -1;
+    return 0;
+  });
+  
+  const shown = scored.slice(0, PAGE);
+  document.getElementById('tableInfo').textContent = `${scored.length} matchs avec scores — affichage ${shown.length}/${scored.length}`;
+  
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = shown.map((d, i) => {
+    const diff = d.score_diff || 0;
+    const diffClass = diff > 0 ? 'diff-pos' : diff < 0 ? 'diff-neg' : 'diff-zero';
+    const diffText = diff > 0 ? `+${diff.toFixed(1)}` : diff === 0 ? '0' : diff.toFixed(1);
+    const predVal = d.predicted_value || (d.prediction || '—');
+    const realScore = `${d.home_score}-${d.away_score}`;
+    const probas = [d.prob_a, d.prob_b, d.prob_c].filter(Boolean).join(' / ');
+    const odds = [d.odds_a, d.odds_b, d.odds_c].filter(Boolean).map(o => parseFloat(o).toFixed(2)).join(' / ');
+    const sportBadge = SPORT_BG[d.sport] || 'bg-slate-700 text-slate-300';
+    
+    return `<tr class="${i%2?'bg-slate-800/30':''} fade-in" style="animation-delay:${Math.min(i*5,300)}ms">
+      <td class="px-3 py-2 text-slate-300">${d.date||''}</td>
+      <td class="px-3 py-2"><span class="sport-badge ${sportBadge}">${d.category||d.sport}</span> ${d.league_code?'<span class="text-slate-500 text-xs">'+d.league_code+'</span>':''}</td>
+      <td class="px-3 py-2 font-medium">${d.home_team||''}</td>
+      <td class="px-3 py-2 font-medium">${d.away_team||''}</td>
+      <td class="px-3 py-2 text-center font-semibold text-yellow-300">${d.prediction||''}</td>
+      <td class="px-3 py-2 text-center text-slate-400">${predVal}</td>
+      <td class="px-3 py-2 text-center font-bold text-white">${realScore}</td>
+      <td class="px-3 py-2 text-center ${diffClass}">${diffText}</td>
+      <td class="px-3 py-2 text-center text-xs text-slate-400">${probas}</td>
+      <td class="px-3 py-2 text-center text-xs text-slate-400">${odds}</td>
+    </tr>`;
+  }).join('');
+}
+
+function sortTable(col) {
+  if (currentSort.col === col) currentSort.asc = !currentSort.asc;
+  else { currentSort.col = col; currentSort.asc = false; }
+  renderTable();
+}
+
+function buildCharts() {
+  // Diff by sport
+  const sports = [...new Set(DATA.map(d => d.sport))].sort();
+  const diffs = sports.map(s => {
+    const scored = DATA.filter(d => d.sport === s && d.home_score != null);
+    return scored.length ? (scored.reduce((sum, d) => sum + (d.score_diff||0), 0) / scored.length) : 0;
+  });
+  
+  new Chart(document.getElementById('chartDiff'), {
+    type: 'bar',
+    data: {
+      labels: sports,
+      datasets: [{
+        label: 'Écart moyen (score_diff)',
+        data: diffs,
+        backgroundColor: sports.map(s => SPORT_COLORS[s] || '#64748b'),
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+        x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 11 } } }
+      }
+    }
+  });
+  
+  // Predictions by category
+  const cats = [...new Set(DATA.map(d => d.category))];
+  const catCounts = cats.map(c => DATA.filter(d => d.category === c).length);
+  
+  new Chart(document.getElementById('chartPreds'), {
+    type: 'doughnut',
+    data: {
+      labels: cats,
+      datasets: [{ data: catCounts, backgroundColor: cats.map((_, i) => `hsl(${i*40}, 60%, 50%)`), borderWidth: 0 }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { size: 11 }, boxWidth: 12 } } }
+    }
+  });
+}
+
+function exportCSV() {
+  const scored = filteredData.filter(d => d.home_score != null);
+  const headers = ['date','sport','category','home_team','away_team','prediction','predicted_value','home_score','away_score','score_diff','home_diff','away_diff','prob_a','prob_b','prob_c','odds_a','odds_b','odds_c'];
+  let csv = headers.join(',') + '\n';
+  scored.forEach(d => {
+    csv += headers.map(h => {
+      let v = d[h];
+      if (v == null) return '';
+      return '"' + String(v).replace(/"/g, '""') + '"';
+    }).join(',') + '\n';
+  });
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'forebet_filtered.csv';
+  a.click();
+}
+
+loadData();
+</script>
+</body>
+</html>

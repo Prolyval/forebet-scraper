@@ -1,0 +1,274 @@
+Scraping 9 categories × 26 days = 234 requests
+
+📅 2026-03-01
+  [1/234] 1X2                       -> 44 matchs
+  [2/234] Over/Under 2.5            -> 44 matchs
+  [3/234] Mi-temps                  -> 44 matchs
+  [4/234] HT/FT                     -> 44 matchs
+  [5/234] BTTS                      -> 44 matchs
+  [6/234] Double Chance             -> 44 matchs
+  [7/234] Handicap                  -> 44 matchs
+  [8/234] Corners                   -> 910 matchs
+  [9/234] Cartons                   -> 921 matchs
+📅 2026-03-02
+  [10/234] 1X2                       -> 44 matchs
+  [11/234] Over/Under 2.5            -> 44 matchs
+  [12/234] Mi-temps                  -> 44 matchs
+  [13/234] HT/FT                     -> 44 matchs
+  [14/234] BTTS                      -> 44 matchs
+  [15/234] Double Chance             -> 41 matchs
+  [16/234] Handicap                  -> 44 matchs
+  [17/234] Corners                   -> 120 matchs
+  [18/234] Cartons                   -> 122 matchs
+📅 2026-03-03
+  [19/234] 1X2                       -> 44 matchs
+  [20/234] Over/Under 2.5            -> 44 matchs
+  [21/234] Mi-temps                  -> 44 matchs
+  [22/234] HT/FT                     -> 44 matchs
+  [23/234] BTTS                      -> 44 matchs
+  [24/234] Double Chance             -> 44 matchs
+  [25/234] Handicap                  -> 44 matchs
+  [26/234] Corners                   -> 200 matchs
+  [27/234] Cartons                   -> 210 matchs
+📅 2026-03-04
+  [28/234] 1X2                       -> 44 matchs
+  [29/234] Over/Under 2.5            -> 44 matchs
+  [30/234] Mi-temps                  -> 44 matchs
+  [31/234] HT/FT                     -> 44 matchs
+  [32/234] BTTS                      -> 44 matchs
+  [33/234] Double Chance             -> 44 matchs
+  [34/234] Handicap                  -> 44 matchs
+  [35/234] Corners                   -> 238 matchs
+  [36/234] Cartons                   -> 245 matchs
+📅 2026-03-05
+  [37/234] 1X2                       -> 44 matchs
+  [38/234] Over/Under 2.5            -> 44 matchs
+  [39/234] Mi-temps                  -> 44 matchs
+  [40/234] HT/FT                     -> 44 matchs
+  [41/234] BTTS                      -> 44 matchs
+  [42/234] Double Chance             -> 42 matchs
+  [43/234] Handicap                  -> 44 matchs
+  [44/234] Corners                   -> 128 matchs
+  [45/234] Cartons                   -> 132 matchs
+📅 2026-03-06
+  [46/234] 1X2                       -> 44 matchs
+  [47/234] Over/Under 2.5            -> 44 matchs
+  [48/234] Mi-temps                  -> 44 matchs
+  [49/234] HT/FT                     -> 44 matchs
+  [50/234] BTTS                      -> 44 matchs
+  [51/234] Double Chance             -> 44 matchs
+  [52/234] Handicap                  -> 44 matchs
+  [53/234] Corners                   -> 297 matchs
+  [54/234] Cartons                   -> 309 matchs
+📅 2026-03-07
+  [55/234] 1X2                       -> 44 matchs
+  [56/234] Over/Under 2.5            -> 44 matchs
+  [57/234] Mi-temps                  -> 44 matchs
+  [58/234] HT/FT                     -> 44 matchs
+  [59/234] BTTS                      -> 44 matchs
+  [60/234] Double Chance             -> 44 matchs
+  [61/234] Handicap                  -> 44 matchs
+  [62/234] Corners                   -> 1112 matchs
+  [63/234] Cartons                   -> 1145 matchs
+📅 2026-03-08
+  [64/234] 1X2                       -> 44 matchs
+  [65/234] Over/Under 2.5            -> 44 matchs
+  [66/234] Mi-temps                  -> 44 matchs
+  [67/234] HT/FT                     -> 44 matchs
+  [68/234] BTTS                      -> 44 matchs
+  [69/234] Double Chance             -> 44 matchs
+  [70/234] Handicap                  -> 44 matchs
+  [71/234] Corners                   -> 840 matchs
+  [72/234] Cartons                   -> 849 matchs
+📅 2026-03-09
+  [73/234] 1X2                       -> 44 matchs
+  [74/234] Over/Under 2.5            -> 44 matchs
+  [75/234] Mi-temps                  -> 44 matchs
+  [76/234] HT/FT                     -> 44 matchs
+  [77/234] BTTS                      -> 44 matchs
+  [78/234] Double Chance             -> 32 matchs
+  [79/234] Handicap                  -> 44 matchs
+  [80/234] Corners                   -> 129 matchs
+  [81/234] Cartons                   -> 136 matchs
+📅 2026-03-10
+  [82/234] 1X2                       -> 44 matchs
+  [83/234] Over/Under 2.5            -> 44 matchs
+  [84/234] Mi-temps                  -> 44 matchs
+  [85/234] HT/FT                     -> 44 matchs
+  [86/234] BTTS                      -> 44 matchs
+  [87/234] Double Chance             -> 44 matchs
+  [88/234] Handicap                  -> 44 matchs
+  [89/234] Corners                   -> 167 matchs
+  [90/234] Cartons                   -> 183 matchs
+📅 2026-03-11
+  [91/234] 1X2                       -> 44 matchs
+  [92/234] Over/Under 2.5            -> 44 matchs
+  [93/234] Mi-temps                  -> 44 matchs
+  [94/234] HT/FT                     -> 44 matchs
+  [95/234] BTTS                      -> 44 matchs
+  [96/234] Double Chance             -> 44 matchs
+  [97/234] Handicap                  -> 44 matchs
+  [98/234] Corners                   -> 186 matchs
+  [99/234] Cartons                   -> 190 matchs
+📅 2026-03-12
+  [100/234] 1X2                       -> 44 matchs
+  [101/234] Over/Under 2.5            -> 44 matchs
+  [102/234] Mi-temps                  -> 44 matchs
+  [103/234] HT/FT                     -> 44 matchs
+  [104/234] BTTS                      -> 44 matchs
+  [105/234] Double Chance             -> 29 matchs
+  [106/234] Handicap                  -> 44 matchs
+  [107/234] Corners                   -> 121 matchs
+  [108/234] Cartons                   -> 125 matchs
+📅 2026-03-13
+  [109/234] 1X2                       -> 44 matchs
+  [110/234] Over/Under 2.5            -> 44 matchs
+  [111/234] Mi-temps                  -> 44 matchs
+  [112/234] HT/FT                     -> 44 matchs
+  [113/234] BTTS                      -> 44 matchs
+  [114/234] Double Chance             -> 44 matchs
+  [115/234] Handicap                  -> 44 matchs
+  [116/234] Corners                   -> 315 matchs
+  [117/234] Cartons                   -> 325 matchs
+📅 2026-03-14
+  [118/234] 1X2                       -> 44 matchs
+  [119/234] Over/Under 2.5            -> 44 matchs
+  [120/234] Mi-temps                  -> 44 matchs
+  [121/234] HT/FT                     -> 44 matchs
+  [122/234] BTTS                      -> 44 matchs
+  [123/234] Double Chance             -> 44 matchs
+  [124/234] Handicap                  -> 44 matchs
+  [125/234] Corners                   -> 1235 matchs
+  [126/234] Cartons                   -> 1275 matchs
+📅 2026-03-15
+  [127/234] 1X2                       -> 44 matchs
+  [128/234] Over/Under 2.5            -> 44 matchs
+  [129/234] Mi-temps                  -> 44 matchs
+  [130/234] HT/FT                     -> 44 matchs
+  [131/234] BTTS                      -> 44 matchs
+  [132/234] Double Chance             -> 44 matchs
+  [133/234] Handicap                  -> 44 matchs
+  [134/234] Corners                   -> 944 matchs
+  [135/234] Cartons                   -> 962 matchs
+📅 2026-03-16
+  [136/234] 1X2                       -> 44 matchs
+  [137/234] Over/Under 2.5            -> 44 matchs
+  [138/234] Mi-temps                  -> 44 matchs
+  [139/234] HT/FT                     -> 44 matchs
+  [140/234] BTTS                      -> 44 matchs
+  [141/234] Double Chance             -> 35 matchs
+  [142/234] Handicap                  -> 44 matchs
+  [143/234] Corners                   -> 135 matchs
+  [144/234] Cartons                   -> 138 matchs
+📅 2026-03-17
+  [145/234] 1X2                       -> 44 matchs
+  [146/234] Over/Under 2.5            -> 44 matchs
+  [147/234] Mi-temps                  -> 44 matchs
+  [148/234] HT/FT                     -> 44 matchs
+  [149/234] BTTS                      -> 44 matchs
+  [150/234] Double Chance             -> 44 matchs
+  [151/234] Handicap                  -> 44 matchs
+  [152/234] Corners                   -> 185 matchs
+  [153/234] Cartons                   -> 192 matchs
+📅 2026-03-18
+  [154/234] 1X2                       -> 44 matchs
+  [155/234] Over/Under 2.5            -> 44 matchs
+  [156/234] Mi-temps                  -> 44 matchs
+  [157/234] HT/FT                     -> 44 matchs
+  [158/234] BTTS                      -> 44 matchs
+  [159/234] Double Chance             -> 44 matchs
+  [160/234] Handicap                  -> 44 matchs
+  [161/234] Corners                   -> 258 matchs
+  [162/234] Cartons                   -> 263 matchs
+📅 2026-03-19
+  [163/234] 1X2                       -> 44 matchs
+  [164/234] Over/Under 2.5            -> 44 matchs
+  [165/234] Mi-temps                  -> 44 matchs
+  [166/234] HT/FT                     -> 44 matchs
+  [167/234] BTTS                      -> 44 matchs
+  [168/234] Double Chance             -> 44 matchs
+  [169/234] Handicap                  -> 44 matchs
+  [170/234] Corners                   -> 155 matchs
+  [171/234] Cartons                   -> 156 matchs
+📅 2026-03-20
+  [172/234] 1X2                       -> 44 matchs
+  [173/234] Over/Under 2.5            -> 44 matchs
+  [174/234] Mi-temps                  -> 44 matchs
+  [175/234] HT/FT                     -> 44 matchs
+  [176/234] BTTS                      -> 44 matchs
+  [177/234] Double Chance             -> 44 matchs
+  [178/234] Handicap                  -> 44 matchs
+  [179/234] Corners                   -> 295 matchs
+  [180/234] Cartons                   -> 311 matchs
+📅 2026-03-21
+  [181/234] 1X2                       -> 44 matchs
+  [182/234] Over/Under 2.5            -> 44 matchs
+  [183/234] Mi-temps                  -> 44 matchs
+  [184/234] HT/FT                     -> 44 matchs
+  [185/234] BTTS                      -> 44 matchs
+  [186/234] Double Chance             -> 44 matchs
+  [187/234] Handicap                  -> 44 matchs
+  [188/234] Corners                   -> 1172 matchs
+  [189/234] Cartons                   -> 1205 matchs
+📅 2026-03-22
+  [190/234] 1X2                       -> 44 matchs
+  [191/234] Over/Under 2.5            -> 44 matchs
+  [192/234] Mi-temps                  -> 44 matchs
+  [193/234] HT/FT                     -> 44 matchs
+  [194/234] BTTS                      -> 44 matchs
+  [195/234] Double Chance             -> 44 matchs
+  [196/234] Handicap                  -> 44 matchs
+  [197/234] Corners                   -> 957 matchs
+  [198/234] Cartons                   -> 975 matchs
+📅 2026-03-23
+  [199/234] 1X2                       -> 44 matchs
+  [200/234] Over/Under 2.5            -> 44 matchs
+  [201/234] Mi-temps                  -> 44 matchs
+  [202/234] HT/FT                     -> 44 matchs
+  [203/234] BTTS                      -> 44 matchs
+  [204/234] Double Chance             -> 25 matchs
+  [205/234] Handicap                  -> 44 matchs
+  [206/234] Corners                   -> 94 matchs
+  [207/234] Cartons                   -> 95 matchs
+📅 2026-03-24
+  [208/234] 1X2                       -> 44 matchs
+  [209/234] Over/Under 2.5            -> 44 matchs
+  [210/234] Mi-temps                  -> 44 matchs
+  [211/234] HT/FT                     -> 44 matchs
+  [212/234] BTTS                      -> 44 matchs
+  [213/234] Double Chance             -> 26 matchs
+  [214/234] Handicap                  -> 44 matchs
+  [215/234] Corners                   -> 119 matchs
+  [216/234] Cartons                   -> 124 matchs
+📅 2026-03-25
+  [217/234] 1X2                       -> 44 matchs
+  [218/234] Over/Under 2.5            -> 44 matchs
+  [219/234] Mi-temps                  -> 44 matchs
+  [220/234] HT/FT                     -> 44 matchs
+  [221/234] BTTS                      -> 44 matchs
+  [222/234] Double Chance             -> 41 matchs
+  [223/234] Handicap                  -> 44 matchs
+  [224/234] Corners                   -> 168 matchs
+  [225/234] Cartons                   -> 172 matchs
+📅 2026-03-26
+  [226/234] 1X2                       -> 44 matchs
+  [227/234] Over/Under 2.5            -> 44 matchs
+  [228/234] Mi-temps                  -> 44 matchs
+  [229/234] HT/FT                     -> 44 matchs
+  [230/234] BTTS                      -> 44 matchs
+  [231/234] Double Chance             -> 26 matchs
+  [232/234] Handicap                  -> 44 matchs
+  [233/234] Corners                   -> 85 matchs
+  [234/234] Cartons                   -> 85 matchs
+
+==================================================
+✅ 29319 total rows saved
+   1X2                       : 1144 rows
+   Over/Under 2.5            : 1144 rows
+   Mi-temps                  : 1144 rows
+   HT/FT                     : 1144 rows
+   BTTS                      : 1144 rows
+   Double Chance             : 1045 rows
+   Handicap                  : 1144 rows
+   Corners                   : 10565 rows
+   Cartons                   : 10845 rows

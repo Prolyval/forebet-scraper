@@ -1,0 +1,27 @@
+{
+  "total_matches": 1069,
+  "correct_predictions": 489,
+  "accuracy": 45.7,
+  "reliable_zones": {
+    "1_high_confidence": {
+      "range": "60%+",
+      "accuracy": 77.1,
+      "sample": 48
+    },
+    "2_high_confidence": {
+      "range": "60%+",
+      "accuracy": 63.9,
+      "sample": 36
+    },
+    "1_very_high": {
+      "range": "70%+",
+      "accuracy": 92.9,
+      "sample": 14
+    },
+    "2_very_high": {
+      "range": "70%+",
+      "accuracy": 95.0,
+      "sample": 20
+    }
+  }
+}
