@@ -18,17 +18,35 @@ on:
         required: false
         default: ''
 
+permissions:
+  contents: read
+  actions: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: gh-scraper
     steps:
+      - name: Debug info
+        run: |
+          echo "Runner OS: $(uname -a)"
+          echo "Python: $(python3 --version 2>/dev/null || echo 'not found')"
+          echo "PWD: $(pwd)"
+          ls -la
+
       - uses: actions/checkout@v4
       
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Verify checkout
+        run: |
+          echo "Checkout done, files:"
+          ls -la
+          echo "--- gh-scraper ---"
+          ls -la gh-scraper/
+
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       
