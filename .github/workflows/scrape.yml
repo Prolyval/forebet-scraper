@@ -38,7 +38,7 @@ jobs:
       - name: Run scraper
         env:
           START_DATE: ${{ github.event.inputs.start_date || '2026-03-01' }}
-          END_DATE: ${{ github.event.inputs.end_date || '2026-03-26' }}
+          END_DATE: ${{ github.event.inputs.end_date || '' }}
           SPORT_FILTER: ${{ github.event.inputs.sport_filter || '' }}
         run: python scrape_scores.py
       

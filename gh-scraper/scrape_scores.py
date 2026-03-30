@@ -156,11 +156,14 @@ def match_teams(scraped_teams, existing_home, existing_away):
 def main():
     # Configuration
     start_date = os.environ.get("START_DATE", "2026-03-01")
-    end_date = os.environ.get("END_DATE", "2026-03-26")
+    end_date = os.environ.get("END_DATE", "")  # empty = today
     sport_filter = os.environ.get("SPORT_FILTER", "")  # empty = all
     
     start = datetime.strptime(start_date, "%Y-%m-%d")
-    end = datetime.strptime(end_date, "%Y-%m-%d")
+    if end_date:
+        end = datetime.strptime(end_date, "%Y-%m-%d")
+    else:
+        end = datetime.now()
     
     # Load existing matches
     existing = load_existing_csv()
