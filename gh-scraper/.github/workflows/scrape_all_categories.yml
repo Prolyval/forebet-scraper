@@ -1,0 +1,61 @@
+name: Scrape All Forebet Categories
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Daily at 10:00 UTC
+  workflow_dispatch:
+    inputs:
+      start_date:
+        description: 'Start date YYYY-MM-DD (default: today)'
+        required: false
+        default: ''
+      end_date:
+        description: 'End date YYYY-MM-DD (default: tomorrow)'
+        required: false
+        default: ''
+      category:
+        description: 'Category to scrape (default: all)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: gh-scraper
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 -q
+
+      - name: Run multi-category scraper
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.start_date }}" ]; then
+            ARGS="$ARGS --from ${{ github.event.inputs.start_date }}"
+          fi
+          if [ -n "${{ github.event.inputs.end_date }}" ]; then
+            ARGS="$ARGS --to ${{ github.event.inputs.end_date }}"
+          fi
+          if [ -n "${{ github.event.inputs.category }}" ]; then
+            ARGS="$ARGS --category '${{ github.event.inputs.category }}'"
+          fi
+          python scrape_all_categories.py $ARGS
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: forebet-all-categories-${{ github.run_number }}
+          path: gh-scraper/output/
+          retention-days: 30
